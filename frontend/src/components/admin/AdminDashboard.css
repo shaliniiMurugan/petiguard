@@ -1,0 +1,383 @@
+/* AdminDashboard.css - Complete with responsive design */
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .dashboard-header {
+    background-color: #0e2c4a;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .logout-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .logout-btn:hover {
+    background-color: white;
+    color: #0e2c4a;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 66px); /* Adjust based on header height */
+  }
+  
+  .sidebar {
+    width: 250px;
+    min-width: 250px;
+    background-color: #0e2c4a;
+    color: white;
+    padding: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar nav ul li {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-size: 16px;
+  }
+  
+  .sidebar nav ul li.active a {
+    background-color: #0c447c;
+    border-left: 4px solid #9b59b6;
+    padding-left: 16px;
+  }
+  
+  .sidebar nav ul li a:hover {
+    background-color: #0c447c;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #f0f4f8;
+    overflow-y: auto;
+  }
+  
+  .dashboard-overview h2 {
+    margin-top: 0;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 24px;
+  }
+  
+  /* Using flexbox for stats container to have better control over spacing */
+  .stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  
+  .stat-box {
+    background-color: white;
+    padding: 25px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    flex: 0 0 calc(16.666% - 24px); /* For 6 boxes per row with gap */
+    margin: 12px;
+  }
+  
+  /* Add specific spacing between Total and Resolved boxes */
+  .stat-box.total-petitions {
+    margin-right: 40px; /* Extra space after Total Petitions */
+  }
+  
+  .stat-box:hover {
+    transform: translateY(-3px);
+  }
+  
+  .stat-box h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #1e3a8a;
+  }
+  
+  .stat-box p {
+    margin: 0;
+    color: #64748b;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .stat-box.alert h3 {
+    color: #dc2626;
+  }
+  
+  .admin-sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .department-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+  }
+  
+  .department-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .department-table th,
+  .department-table td {
+    padding: 14px 16px;
+    text-align: center;
+  }
+  
+  .department-table th {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+  
+  .department-table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  
+  .department-table tr:hover {
+    background-color: #e6f0ff;
+  }
+  
+  .department-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+  }
+  
+  /* Status cell styling */
+  .status-pending {
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .status-progress {
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .status-resolved {
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .status-rejected {
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .status-urgent {
+    color: #dc2626;
+    font-weight: 600;
+  }
+  
+  /* Loading and error state styling */
+  .loading, .error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.2rem;
+    color: #64748b;
+  }
+  
+  .error {
+    color: #dc2626;
+  }
+  
+  /* Responsive breakpoints */
+  @media (max-width: 1400px) {
+    .stat-box {
+      flex: 0 0 calc(25% - 24px); /* 4 boxes per row */
+    }
+    
+    /* Keep specific spacing for total petitions even at this breakpoint */
+    .stat-box.total-petitions {
+      margin-right: 40px;
+    }
+    
+    /* Force second box to next row if screen not wide enough for gap */
+    @media (max-width: 1200px) {
+      .stat-box.total-petitions {
+        margin-right: 12px;
+      }
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .stat-box {
+      flex: 0 0 calc(33.333% - 24px); /* 3 boxes per row */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .admin-sections {
+      grid-template-columns: 1fr;
+    }
+    
+    .stats-container {
+      justify-content: center;
+    }
+    
+    .stat-box {
+      flex: 0 0 calc(33.333% - 24px); /* 3 boxes per row */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      min-width: 100%;
+    }
+  
+    .stat-box {
+      flex: 0 0 calc(50% - 24px); /* 2 boxes per row */
+    }
+    
+    /* Reset specific spacing when boxes stack differently */
+    .stat-box.total-petitions {
+      margin-right: 12px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .stats-container {
+      justify-content: center;
+    }
+    
+    .stat-box {
+      flex: 0 0 calc(100% - 24px); /* 1 box per row */
+      max-width: 280px; /* Limit maximum width on small screens */
+    }
+    
+    .dashboard-header {
+      padding: 15px 20px;
+    }
+    
+    .main-content {
+      padding: 20px 15px;
+    }
+    
+    .section {
+      padding: 20px 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dashboard-header {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 15px;
+    }
+    
+    .user-info {
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+    .sidebar nav ul li a {
+      padding: 12px 15px;
+    }
+  }
+
+  .stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 30px; /* Increased from 20px to 30px */
+    margin-bottom: 30px;
+  }
+  
+  /* If you want even more control, you can add individual margin to each box */
+  .stat-box {
+    background-color: white;
+    padding: 25px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    margin: 5px; /* Added margin all around */
+  }
+
+  .stats-row{
+    display: flex;
+    flex-wrap: wrap;
+  }
